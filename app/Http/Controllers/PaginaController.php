@@ -33,8 +33,11 @@ class PaginaController extends Controller
 
     public function store(Request $request)
     {
+        
         $pagina = new $this->pagina;
         $pagina->nombre = $request->input('nombre');
+        $pagina->dimension = $request->input('dimension');
+        $pagina->propiedad = $request->input('propiedad');
         $pagina->estado = $request->input('estado');
         $pagina->save();
         return Redirect::route('indexPagina')->with('success', true)->with('message', 'Página creada con exito.');

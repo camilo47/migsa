@@ -15,10 +15,18 @@
                         <input type="text" name="nombre" class="form-control" value="{{ $pagina->nombre }}" required>
                     </div>
                     <div class="form-group">
+                        <label for="nombre">Dimesión</label>
+                        <input type="text" name="dimension" class="form-control" value="{{ $pagina->dimension }}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombre">Propiedad</label>
+                        <input type="text" name="propiedad" class="form-control" value="{{ $pagina->propiedad }}" required>
+                    </div>
+                    <div class="form-group">
                         <label for="estado">Estado</label>
                         <select name="estado" class="form-control">
                             <option value="1" @if($pagina->estado) selected @endif>Activo</option>
-                            <option value="0" @if(!$pagina->estado) selected @endif>Inactivo</option>
+                            <option value="0" @if(!$pagina->estado)  @endif>Inactivo</option>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Guardar</button>

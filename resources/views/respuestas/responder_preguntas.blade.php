@@ -7,6 +7,15 @@
                     <h4 class="title">{{ $title }}</h4>
                 </div>
                 <div class="card-content table-responsive">
+                    <div class="form-group">
+                        <label for="propiedad">Propiedad :</label>
+                        <label for="propiedad">{{$propiedad}}</label>
+
+                        <label for="dimesion">Dimensión :</label>
+                        <label for="dimesion">{{$dimension}}</label>
+                    </div>
+                </div>
+                <div class="card-content table-responsive">
                     @include('message.message')
                     <form class="form-group" method="POST" action="{{ route('storeRespuesta') }}">
                         @csrf

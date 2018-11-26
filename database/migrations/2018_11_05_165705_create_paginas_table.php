@@ -16,6 +16,8 @@ class CreatePaginasTable extends Migration
         Schema::create('paginas', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
+            $table->string('dimension');
+            $table->string('propiedad');
             $table->tinyInteger('estado')->default(1);
             $table->timestamps();
         });
