@@ -98,3 +98,14 @@ Route::prefix('respuestas')->group(function () {
         'uses' => 'RespuestaController@store'
     ]);
 });
+
+Route::prefix('reportes')->group(function () {
+    Route::get('/', [
+        'as'   => 'reportes',
+        'uses' => 'ReportesController@index'
+    ]);
+    Route::post('/store', [
+        'as'   => 'storeReporte',
+        'uses' => 'ReportesController@store'
+    ]);
+});

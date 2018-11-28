@@ -37,6 +37,12 @@
                     <p>Indices</p>
                 </a>
             </li>
+            <li>
+                <a href="{{ route('reportes') }}">
+                    <i class="fa fa-font-awesome"></i>
+                    <p>Reportes</p>
+                </a>
+            </li>
         </ul>
     </div>
     @else

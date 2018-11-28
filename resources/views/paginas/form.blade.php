@@ -6,6 +6,7 @@
             <div class="card-header" data-background-color="blue">
                 <h4 class="title">{{ $title }}</h4>
             </div>
+
             <div class="card-content table-responsive">
                 @include('message.message')
                 <form class="form-group" method="POST" action="@if($action == 'create'){{ route('storePagina') }}@else{{ route('updatePagina', ['id' => $pagina->id]) }}@endif">
@@ -15,12 +16,12 @@
                         <input type="text" name="nombre" class="form-control" value="{{ $pagina->nombre }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Dimesión</label>
+                        <label for="dimension">Dimesión</label>
                         <input type="text" name="dimension" class="form-control" value="{{ $pagina->dimension }}" required>
                     </div>
                     <div class="form-group">
                         <label for="nombre">Propiedad</label>
-                        <input type="text" name="propiedad" class="form-control" value="{{ $pagina->propiedad }}" required>
+                        <input type="dimension" name="propiedad" class="form-control" value="{{ $pagina->propiedad }}" required>
                     </div>
                     <div class="form-group">
                         <label for="estado">Estado</label>
