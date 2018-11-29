@@ -113,3 +113,49 @@ Route::prefix('reportes')->group(function () {
         'uses' => 'ReportesController@show'
     ]);
 });
+
+Route::prefix('pais')->group(function () {
+    Route::get('/', [
+        'as'   => 'indexPais',
+        'uses' => 'PaisController@index'
+    ]);
+    Route::get('/create', [
+        'as'   => 'createPais',
+        'uses' => 'PaisController@create'
+    ]);
+    Route::post('/store', [
+        'as'   => 'storePais',
+        'uses' => 'PaisController@store'
+    ]);
+    Route::get('/{id}/edit', [
+        'as'   => 'editPais',
+        'uses' => 'PaisController@edit'
+    ]);
+    Route::post('/{id}/update', [
+        'as'   => 'updatePais',
+        'uses' => 'PaisController@update'
+    ]);
+});
+
+Route::prefix('sector')->group(function () {
+    Route::get('/', [
+        'as'   => 'indexSector',
+        'uses' => 'SectorController@index'
+    ]);
+    Route::get('/create', [
+        'as'   => 'createSector',
+        'uses' => 'SectorController@create'
+    ]);
+    Route::post('/store', [
+        'as'   => 'storeSector',
+        'uses' => 'SectorController@store'
+    ]);
+    Route::get('/{id}/edit', [
+        'as'   => 'editSector',
+        'uses' => 'SectorController@edit'
+    ]);
+    Route::post('/{id}/update', [
+        'as'   => 'updateSector',
+        'uses' => 'SectorController@update'
+    ]);
+});

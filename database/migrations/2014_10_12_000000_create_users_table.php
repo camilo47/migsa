@@ -16,8 +16,8 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('city');
-            $table->string('sector');
+            $table->unsignedInteger('city');
+            $table->unsignedInteger('sector');
             $table->string('address');
             $table->string('identification');
             $table->enum('rol', ['Admin', 'Empresa'])->default('Empresa');
@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->integer('numero_reporte')->default(1);
             $table->rememberToken();
             $table->timestamps();
+
         });
     }
 

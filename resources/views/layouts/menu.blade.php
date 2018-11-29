@@ -37,6 +37,19 @@
                     <p>Indices</p>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('indexPais') }}">
+                    <i class="fa fa-support"></i>
+                    <p>Paises</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('indexSector') }}">
+                    <i class="fa fa-support"></i>
+                    <p>Sectores</p>
+                </a>
+            </li>
             <li>
                 <a href="{{ route('reportes') }}">
                     <i class="fa fa-font-awesome"></i>

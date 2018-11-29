@@ -26,15 +26,13 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Ciudad') }}</label>
+                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('País') }}</label>
 
                             <div class="col-md-6">
                                 <select id="city" type="text" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" required>
-                                    <option value="Bogotá">Bogotá</option>
-                                    <option value="Medellin">Medellin</option>
-                                    <option value="Cali">Cali</option>
-                                    <option value="Barranquilla">Barranquilla</option>
-                                    <option value="Bucaramanga">Bucaramanga</option>
+                                @foreach($paises as $pais)
+                                    <option value="{{$pais->id}}">{{$pais->nombre}}</option>
+                                @endforeach
                                 </select>
 
                                 @if ($errors->has('city'))
@@ -48,10 +46,14 @@
                         <div class="form-group row">
                             <label for="sector" class="col-md-4 col-form-label text-md-right">{{ __('Sector') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="sector" type="text" class="form-control{{ $errors->has('sector') ? ' is-invalid' : '' }}" name="sector" value="{{ old('sector') }}" required autofocus>
+                             <div class="col-md-6">
+                                <select id="sector" type="text" class="form-control{{ $errors->has('sector') ? ' is-invalid' : '' }}" name="sector" required>
+                                @foreach($sectores as $sector)
+                                    <option value="{{$sector->id}}">{{$sector->nombre}}</option>
+                                @endforeach
+                                </select>
 
-                                @if ($errors->has('sector'))
+                                @if ($errors->has('city'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('sector') }}</strong>
                                     </span>

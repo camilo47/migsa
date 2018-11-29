@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Pais;
+use App\Sector;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -29,15 +31,19 @@ class RegisterController extends Controller
      * @var string
      */
     protected $redirectTo = '/home';
+    protected $pais;
+    protected $sector;
 
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Pais $pais, Sector $sector)
     {
         $this->middleware('guest');
+        $this->pais = $pais;
+        $this->sector = $sector;
     }
 
     /**
@@ -79,4 +85,14 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    public function showRegistrationForm()
+{
+    $pais = $this->pais;
+    $pais = $pais::all();
+    $sector = $this->sector;
+    $sector = $sector::all();
+    $data = ['paises' => $pais, 'sectores' => $sector ];
+    return view('auth.register', $data);
+}
 }

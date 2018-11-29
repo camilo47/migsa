@@ -104,7 +104,7 @@ class ReportesController extends Controller
                 group by pg.propiedad  ;";
 
         array_push($data_reportes,DB::select($sql_indices), DB::select($sql_indicadores), DB::select($sql_pagina), DB::select($sql_dimension), DB::select($sql_propiedad) );
-        
+    
         $data = ['title' => 'Reportes', 'data_reportes' => $data_reportes];
         return \view('reportes.home', $data);
     }
