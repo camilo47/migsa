@@ -108,4 +108,8 @@ Route::prefix('reportes')->group(function () {
         'as'   => 'storeReporte',
         'uses' => 'ReportesController@store'
     ]);
+    Route::get('/{user}/{numero}/', [
+        'as'   => 'reporteempresa',
+        'uses' => 'ReportesController@show'
+    ]);
 });
